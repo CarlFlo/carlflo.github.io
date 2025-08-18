@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Counter</title>
+  <link href="https://fonts.googleapis.com/css?family=San+Francisco&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="textCounter.css" />
+  <script src="textCounter.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html" class="home-btn">Home</a>
+    </nav>
+
+  <div class="container">
+    <h1>Text Counter</h1>
+
+    <div class="counts" aria-live="polite">
+      <div class="pill"><strong id="words">0</strong> words</div>
+      <div class="pill"><strong id="chars">0</strong> characters</div>
+      <div class="pill"><strong id="charsNoWS">0</strong> characters (non whitespace)</div>
+      <div class="pill"><strong id="lines">0</strong> lines</div>
+      <div class="pill" title="Estimated reading time at 200 words per minute">
+        <strong id="reading">0:00</strong> reading time
+      </div>
+    </div>
+
+    <textarea id="input" placeholder="Paste or type your text here…" spellcheck="false"></textarea>
+
+    <div class="footer">
+      <small id="byteInfo">0 bytes (UTF-8)</small>
+    </div>
+  </div>
+</body>
+</html>
+
+
