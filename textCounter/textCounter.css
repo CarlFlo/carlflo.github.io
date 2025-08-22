@@ -1,3 +1,4 @@
+/* textCounter.css */
 /* Clean style consistent with pdfcombine.css, simplified for the new HTML */
 body {
   font-family: 'San Francisco', Arial, sans-serif;
@@ -12,27 +13,27 @@ body {
 }
 
 nav {
-    position: fixed;
-	top: 10px;
-	left: 10px;
-	padding: 10px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
 }
 
 nav .home-btn {
-    display: inline-block;
-    background-color: #0070c9;
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
-    transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
+  background-color: #0070c9;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 nav .home-btn:hover {
-    background-color: #00549a;
-    transform: translateY(-2px);
+  background-color: #00549a;
+  transform: translateY(-2px);
 }
 
 .pill[title] {
@@ -68,12 +69,14 @@ nav .home-btn:hover {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 28px;
+  text-align: left;
 }
 
 h1 {
   margin: 0 0 14px 0;
   color: #333;
   font-size: 24px;
+  text-align: center;
 }
 
 /* Counts row above textarea */
@@ -114,13 +117,46 @@ textarea#input:focus {
   box-shadow: 0 0 0 3px rgba(0, 112, 201, 0.15);
 }
 
-/* Footer only shows byte info now */
+/* Footer shows reading time + byte info stacked, right-aligned */
 .footer {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   justify-content: flex-end;
-  align-items: center;
   margin-top: 10px;
   color: #555;
+  gap: 2px;
+}
+
+.footer small {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* Tooltip effect for readingInfo */
+#readingInfo {
+  position: relative;
+  cursor: help;
+}
+
+#readingInfo::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 125%;
+  right: 0;
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+#readingInfo:hover::after {
+  opacity: 1;
 }
 
 @media (max-width: 520px) {

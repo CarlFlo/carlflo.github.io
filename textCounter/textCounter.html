@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <nav>
-        <a href="../index.html" class="home-btn">Home</a>
-    </nav>
+  <nav>
+    <a href="../index.html" class="home-btn">Home</a>
+  </nav>
 
   <div class="container">
     <h1>Text Counter</h1>
@@ -22,18 +22,16 @@
       <div class="pill"><strong id="chars">0</strong> characters</div>
       <div class="pill"><strong id="charsNoWS">0</strong> characters (non whitespace)</div>
       <div class="pill"><strong id="lines">0</strong> lines</div>
-      <div class="pill" title="Estimated reading time at 200 words per minute">
-        <strong id="reading">0:00</strong> reading time
-      </div>
     </div>
 
     <textarea id="input" placeholder="Paste or type your text here…" spellcheck="false"></textarea>
 
     <div class="footer">
+      <small id="readingInfo" title="Estimated reading time at 200 words per minute">
+        <span id="reading">0:00</span> reading time
+      </small>
       <small id="byteInfo">0 bytes (UTF-8)</small>
     </div>
   </div>
 </body>
 </html>
-
-
